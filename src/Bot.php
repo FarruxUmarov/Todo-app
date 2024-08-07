@@ -79,19 +79,6 @@ class Bot extends DB
         return $text;
     }
 
-    /*
-    public function getAllTodos(int $chatId)
-    {
-        $user = new User();
-        $user = $user->getUserInfo($chatId);
-
-        $todo = new Todo();
-        $todos = $todo->getAllTodosByUser($user->id);
-        $reply_markup = $this->prepareButtons($todos, ['text'=>'🗑Delete', 'callback_data'=>'delete']);
-        $text = "Your todos: \n" . $this->prepareText($todos);
-        $this->sendMessage($chatId,$text, $reply_markup);
-    }
-    */
     public function getAllTodos(int $chatId)
     {
         $user = new User();
@@ -112,7 +99,6 @@ class Bot extends DB
     }
 
 
-    // Calkback query
 
     public function toggle(int $chatId, int $todoId)
     {
